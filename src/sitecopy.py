@@ -48,8 +48,8 @@ def generate_page(source: Path, dest: Path, template: Path, basepath: Path):
     html = extract_title(md).join(title_split)
     content_split = html.split("{{ Content }}", 1)
     html = content.join(content_split)
-    html = html.replace('href="/', f'href="/{basepath}')
-    html = html.replace('src="/', f'src="/{basepath}')
+    html = html.replace('href="/', f'href="{basepath}')
+    html = html.replace('src="/', f'src="{basepath}')
     
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(html, encoding="utf-8")
