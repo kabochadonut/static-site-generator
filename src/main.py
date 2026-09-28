@@ -12,7 +12,7 @@ def main():
 
     root_dir = Path(__file__).parent.parent.resolve()
     content_dir = root_dir / "content"
-    public_dir = root_dir / "public"
+    public_dir = root_dir / "docs"
     template_file = root_dir / "template.html"
 
     generate_pages_recursive(content_dir, public_dir, template_file, basepath)

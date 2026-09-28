@@ -59,7 +59,7 @@ def generate_pages_recursive(content_dir: Path, dest_dir: Path, template_file: P
     root_dir = Path(__file__).parent.parent.resolve()
     print(root_dir)
     filepaths_to_copy = [p for p in content_dir.rglob('*') if p.is_file()]
-    filepaths_to_paste = [root_dir / "public" / p.relative_to(root_dir / "content").with_suffix(".html") for p in filepaths_to_copy]
+    filepaths_to_paste = [root_dir / "docs" / p.relative_to(root_dir / "content").with_suffix(".html") for p in filepaths_to_copy]
     print("\n\n")
     for i in range(len(filepaths_to_paste)):
         generate_page(filepaths_to_copy[i], filepaths_to_paste[i], template_file, basepath)
